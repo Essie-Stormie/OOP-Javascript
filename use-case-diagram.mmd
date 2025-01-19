@@ -1,0 +1,13 @@
+%% USE CASE DIAGRAM
+
+graph TD
+    Customer(("Customer"))
+    ViewMenu["View Menu"]
+    PlaceOrder["Place Order"]
+    CalculateTotal["Calculate Total"]
+    DisplayOrder["Display Order"]
+    
+    Customer -->|uses| ViewMenu
+    Customer -->|uses| PlaceOrder
+    PlaceOrder --> CalculateTotal
+    CalculateTotal --> DisplayOrder

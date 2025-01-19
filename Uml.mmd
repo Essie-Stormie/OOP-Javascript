@@ -1,0 +1,37 @@
+classDiagram
+    class MenuItem{
+        +String name
+        +Number price
+        +MenuItem(name, price)
+    }
+    class Menu{
+        +Array items
+        +addItem(item)
+        +removeItem(itemName)
+        +displayMenu()
+    }
+    class Order{
+        +Customer customer
+        +Array items
+        +addItem(item)
+        +calculateTotal()
+        +displayOrder()
+    }
+    class Customer{
+        +String name
+        +Customer(name)
+    }
+    class Restaurant{
+        +String name
+        +Menu menu
+        +Array orders
+        +addOrder(order)
+        +displayOrders()
+    }
+    Restaurant "1" *-- "1" Menu: has
+    Restaurant "1" *-- "0..*" Order: contains
+    Menu "1" *-- "0..*" MenuItem: contains
+    Order "1" *-- "1..*" MenuItem: contains
+    Order "1" *-- "1" Customer: belongs to
+
+
